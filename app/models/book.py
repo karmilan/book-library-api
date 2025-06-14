@@ -9,3 +9,4 @@ class Book(SQLModel, table=True):
     title: str
     author: str
     description: Optional[str] = None
+    status: str = "unread"

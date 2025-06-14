@@ -6,9 +6,11 @@ class Book(BaseModel):
     title: str
     author: str
     description: str
+    status: str
 
 
 class BookUpdate(BaseModel):
     title: str
     author: str
     description: str
+    status: str
