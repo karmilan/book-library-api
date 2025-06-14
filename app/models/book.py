@@ -10,3 +10,4 @@ class Book(SQLModel, table=True):
     author: str
     description: Optional[str] = None
     status: str = "unread"
+    user_id: Optional[int] = Field(default=None)

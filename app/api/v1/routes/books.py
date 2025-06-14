@@ -21,6 +21,16 @@ def get_books(
     return crud_book.get_books(session, offset, limit)
 
 
+@router.get("/{user_id}")
+def get_books_by_user(
+    user_id: int,
+    session: SessionDep,
+    offset: int = 0,
+    limit: Annotated[int, Query(le=100)] = 100,
+):
+    return crud_book.get_books_by_user(user_id, session, offset, limit)
+
+
 @router.post("/")
 def create_books(book: Book, session: SessionDep):
     return crud_book.create_books(book, session)
