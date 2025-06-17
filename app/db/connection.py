@@ -10,6 +10,8 @@ def get_connection():
             password=settings.DB_PASSWORD,
             database=settings.DB_NAME,
         )
+
+        print("mysql con success")
         return db
 
     except Exception as e:

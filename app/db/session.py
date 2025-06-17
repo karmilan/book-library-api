@@ -1,13 +1,10 @@
 from sqlmodel import Session, create_engine
 
+from app.core.config import Settings
 
-MYSQL_USER = "root"
-MYSQL_PASSWORD = "root"
-MYSQL_HOST = "localhost"
-MYSQL_DB = "book_library"
 
 # MySQL connection URL
-mysql_url = f"mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}/{MYSQL_DB}"
+mysql_url = f"mysql+pymysql://{Settings.DB_USER}:{Settings.DB_PASSWORD}@{Settings.DB_HOST}/{Settings.DB_NAME}"
 
 engine = create_engine(mysql_url, echo=True)
 

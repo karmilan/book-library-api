@@ -43,12 +43,12 @@ def verify_token(token: str = Depends(oauth2_scheme)):
 # SIGNUP NEW USER
 def signup_user(user):
     hashed_password = hash_password(user.password)
-    sql = "INSERT INTO USER (name, email, password) VALUES (%s, %s, %s)"
+    sql = "INSERT INTO user (name, email, password) VALUES (%s, %s, %s)"
     val = (user.name, user.email, hashed_password)
 
     cursor = connection.cursor()
 
-    cursor.execute("SELECT userid FROM USER WHERE email = %s", (user.email,))
+    cursor.execute("SELECT userid FROM user WHERE email = %s", (user.email,))
     if cursor.fetchone():
         raise HTTPException(status_code=400, detail="Email already exist")
 
@@ -60,8 +60,7 @@ def signup_user(user):
 # USER LOGIN
 def login_user(user):
     cursor = connection.cursor(dictionary=True)
-    print("emai:::", user.email)
-    cursor.execute("SELECT * FROM USER WHERE email = %s", (user.email,))
+    cursor.execute("SELECT * FROM user WHERE email = %s", (user.email,))
 
     db_user = cursor.fetchone()
     print("db_user>>", db_user)
