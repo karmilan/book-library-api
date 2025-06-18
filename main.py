@@ -11,7 +11,7 @@ app = FastAPI()
 origins = [
     "http://localhost:3000",  # Next.js dev server
     "http://127.0.0.1:3000",
-    # Add your production URL if needed
+    "https://bookly-two-phi.vercel.app/",  # Vercel deployment URL
 ]
 
 # Add the CORS middleware
