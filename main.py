@@ -12,6 +12,7 @@ origins = [
     "http://localhost:3000",  # Next.js dev server
     "http://127.0.0.1:3000",
     "https://bookly-two-phi.vercel.app",  # Vercel deployment URL
+    "https://bookly-two-phi.vercel.app/login",  # Vercel deployment URL
 ]
 
 # Add the CORS middleware
