@@ -8,7 +8,7 @@ cursor = connection.cursor(dictionary=True)
 
 # GET USERS
 def get_users() -> List[Dict]:
-    cursor.execute("SELECT * FROM USER")
+    cursor.execute("SELECT * FROM user")
     result = cursor.fetchall()
     return result
 
