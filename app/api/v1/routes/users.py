@@ -8,8 +8,7 @@ router = APIRouter(prefix="/api/v1/users", tags=["Users"])
 
 
 @router.get("/", response_model=list[User])
-def get_users(current_user=Depends(verify_token)):
-    print("current>>>>>", current_user)
+def get_users():
     return crud_user.get_users()
 
 
